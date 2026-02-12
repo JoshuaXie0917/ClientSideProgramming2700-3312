@@ -8,18 +8,18 @@ function convert() {
     const inputValue = Number(valueInput.value);
     const type = typeSelect.value;
 
-    if (isNaN(inputValue)){
+    if (isNaN(inputValue)) {
         message.textContent = "";
         message.textContent = "Please enter a valid number.";
         return;
     }
 
 
-   let outputValue;
+    let outputValue;
 
-    switch(type) {
+    switch (type) {
         case "cToF":
-            outputValue = (inputValue * 9/5) + 32;
+            outputValue = (inputValue * 9 / 5) + 32;
             break;
         case "mToF":
             outputValue = inputValue * 3.28084;
@@ -44,7 +44,7 @@ function convert() {
             return;
     }
 
-  
-        result.textContent = `${inputValue} ${type.split("To")[0]} equals ${outputValue.toFixed(2)} ${type.split("To")[1]}`;
-       
+
+    result.textContent = `${inputValue} ${type.split("To")[0]} equals ${outputValue.toFixed(2)} ${type.split("To")[1]}`;
+
 }
