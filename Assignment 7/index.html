@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshua Grocery Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Welcome to Joshua Grocery Store</h1>
+    <div class="item">
+        <div class="items">
+            <div class="row"><span>Milk ($4.25)</span> <input id="milk" type="number" min="0" placeholder="0"></div>
+            <div class="row"><span>Bread ($3.10)</span> <input id="bread" type="number" min="0" placeholder="0"></div>
+            <div class="row"><span>Eggs ($5.75)</span> <input id="eggs" type="number" min="0" placeholder="0"></div>
+            <div class="row"><span>Rice ($10.50)</span> <input id="rice" type="number" min="0" placeholder="0"></div>
+            <div class="row"><span>Apples ($2.25)</span> <input id="apples" type="number" min="0" placeholder="0"></div>
+            <div class="row"><span>Chicken ($12.99)</span><input id="chicken" type="number" min="0" placeholder="0">
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <button id="btnTotal">Calculate Total</button>
+        <button id="btnReceipt">Generate Receipt</button>
+        <button id="btnReset">Reset</button>
+    </div>
+
+    <p><strong>Total:</strong> <span id="totalAmount">$0.00</span></p>
+
+    <pre id="receipt" class="receipt">Receipt will appear here</pre>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
