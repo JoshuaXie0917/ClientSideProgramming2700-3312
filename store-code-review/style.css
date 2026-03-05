@@ -1,0 +1,264 @@
+/* ------------------------------
+CSS Variables (Design System)
+Purpose: Centrally manage theme values ​​such as colors and shadows, facilitating a unified style and later maintenance.
+Why it's professional: When changing a theme, only the :root variable needs to be modified; there's no need to search for colors across the entire file.
+-------------------------------- */
+:root {
+  --green: #1e7a3b;
+  --green-dark: #14572a;
+  --cream: #f7f6f2;
+  --card: #ffffff;
+  --text: #1b1f24;
+  --muted: #6a7480;
+  --line: #e7e9ee;
+  --danger: #b42318;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+/* Global box-sizing reset */
+* { box-sizing: border-box; }
+/* Set the default font, background, and text color. Connection points: The entire page is based on the body's basic settings. */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background: var(--cream);
+}
+/* ------------------------------
+Header (Top Brand Bar)
+Link: in index.html <header class="header">
+-------------------------------- */
+.header {
+  background: linear-gradient(180deg, var(--green) 0%, var(--green-dark) 100%);
+  color: white;
+  padding: 18px 0;
+}
+/* header-inner: Function: Controls the maximum width of the header content and centers it, while using flex to arrange the left and right sections of content. */
+.header-inner {
+  width: min(1000px, 92vw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.18);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+/* h1: Global title style (used for store name)
+Note: This is a global selector and will affect all h1 elements on the page. */
+h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.tagline {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+/* ------------------------------
+Main container
+Join point: in index.html <main class="container">
+-------------------------------- */
+.container {
+  width: min(1000px, 92vw);
+  margin: 18px auto;
+}
+/* The main content of the page is wrapped in cards (product area, receipt area). */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  margin-bottom: 14px;
+}
+/* h2:Standardize module title styles (Shop Items / Receipt) */
+h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.hint {
+  margin: 0 0 14px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+/* Product grid layout. Connection points: <div class="grid"> containing multiple <div class="item"> */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #fff;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-name {
+  font-weight: 700;
+}
+
+.item-price {
+  color: var(--muted);
+  font-size: 12px;
+}
+/* Number input:
+Unifies the appearance (width/border/rounded corners) of all quantity input boxes
+Join point: HTML uses `<input type="number" ...>` 
+*/
+input[type="number"] {
+  width: 84px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  outline: none;
+  font-size: 14px;
+}
+
+input[type="number"]:focus {
+  border-color: rgba(30, 122, 59, 0.55);
+}
+/*
+Actions row (buttons + total)
+Join point: <div class="actions"> ... </div>
+*/
+.actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn.primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+
+.btn.primary:hover { filter: brightness(0.97); }
+/* danger: The Reset button is highlighted in red to warn of a dangerous operation (emptying the shopping cart) */
+.btn.danger {
+  background: #fff;
+  border-color: rgba(180, 35, 24, 0.35);
+  color: var(--danger);
+}
+
+.total-box {
+  margin-left: auto;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f3fbf6;
+  border: 1px solid rgba(30, 122, 59, 0.18);
+}
+
+.total-label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.total-value {
+  font-size: 18px;
+  font-weight: 800;
+}
+/* ------------------------------
+Receipt section: Styled to look like a printed receipt with a dashed border and monospace font for alignment
+Join point: <pre id="receipt" class="receipt">
+-------------------------------- */
+.receipt-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.small-note {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.receipt {
+  margin: 10px 0 0 0;
+  border: 1px dashed #cfd6df;
+  background: #fbfbfb;
+  border-radius: 12px;
+  padding: 12px;
+  min-height: 140px;
+  white-space: pre-wrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+}
+/* ------------------------------
+Footer
+Join point: <footer class="footer"> ... </footer>
+-------------------------------- */
+.footer {
+  padding: 16px 0 22px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.muted { color: var(--muted); }
+/* Responsive (Mobile) */
+@media (max-width: 700px) {
+  .grid { grid-template-columns: 1fr; }
+  .total-box { margin-left: 0; width: 100%; justify-content: space-between; }
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--Character encoding: Ensure English characters/symbols are displayed correctly.-->
+  <meta charset="UTF-8" />
+  <!-- Make the page scale with the device width on mobile phones/tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Browser tab title -->
+  <title>Green Basket Grocery</title>
+  <!-- Linking external CSS: All layout, fonts, colors, and card styles are controlled by style.css -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<!-- onload="startTimer()":
+s a "no-operation timer" as soon as the page loads
+Join point: startTimer() is defined in script.js and is used to automatically resetCart() after 15 seconds of inactivity -->
+<body onload="startTimer()">
+  <header class="header">
+    <!-- Classes like header-inner, brand, and badge are used for layout and styling in CSS -->
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo">GB</div>
+        <div>
+          <h1>Green Basket Grocery</h1>
+          <p class="tagline">Fresh picks, simple checkout</p>
+        </div>
+      </div>
+      <!-- badge: Right-hand side badge, indicating this is the demo store -->
+      <div class="badge">Demo Store</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- card: a card container -->
+    <section class="card">
+      <h2>Shop Items</h2>
+      <!-- hint: Provide the user with an action prompt, and explain that the system will reset after 15 seconds of inactivity -->
+      <p class="hint">Enter quantities, then calculate or print your receipt. Inactivity resets after 15 seconds.</p>
+      <!-- grid: Container for product list -->
+      <div class="grid">
+        <div class="item">
+          <div class="item-info">
+            <div class="item-name">Milk</div>
+            <div class="item-price">$3.50</div>
+          </div>
+          <input type="number" id="milk" value="0" min="0" oninput="startTimer()" />
+        </div>
+        <!-- The product structures below are completely identical:
+        Benefits of doing this: Consistent UI, easier data retrieval using fixed IDs in JavaScript -->
+        <div class="item">
+          <div class="item-info">
+            <div class="item-name">Bread</div>
+            <div class="item-price">$2.25</div>
+          </div>
+          <input type="number" id="bread" value="0" min="0" oninput="startTimer()" />
+        </div>
+
+        <div class="item">
+          <div class="item-info">
+            <div class="item-name">Eggs</div>
+            <div class="item-price">$4.10</div>
+          </div>
+          <input type="number" id="eggs" value="0" min="0" oninput="startTimer()" />
+        </div>
+
+        <div class="item">
+          <div class="item-info">
+            <div class="item-name">Rice</div>
+            <div class="item-price">$6.00</div>
+          </div>
+          <input type="number" id="rice" value="0" min="0" oninput="startTimer()" />
+        </div>
+
+        <div class="item">
+          <div class="item-info">
+            <div class="item-name">Apples</div>
+            <div class="item-price">$2.80</div>
+          </div>
+          <input type="number" id="apples" value="0" min="0" oninput="startTimer()" />
+        </div>
+
+        <div class="item">
+          <div class="item-info">
+            <div class="item-name">Chicken</div>
+            <div class="item-price">$9.50</div>
+          </div>
+          <input type="number" id="chicken" value="0" min="0" oninput="startTimer()" />
+        </div>
+      </div>
+      <!-- actions: button area + total display area -->
+      <div class="actions">
+        <!-- onclick calls a JS function (defined in script.js):
+        Calculate Total: Calculates only the total price and prompts the user to print a receipt -->
+        <button class="btn primary" onclick="calculateTotal()">Calculate Total</button>
+        <!-- Print Receipt: Generate a detailed receipt -->
+        <button class="btn" onclick="printReceipt()">Print Receipt</button>
+        <!-- Reset Cart: Manually clears the shopping cart and displays a message.
+        Note: Here, the string parameter is passed to resetCart(message) -->
+        <button class="btn danger" onclick="resetCart('Cart reset.')">Reset Cart</button>
+        <!-- id="total" is the target of the JS update: setTotal(amount) will update this to $xx.xx -->
+        <div class="total-box">
+          <span class="total-label">Total</span>
+          <span id="total" class="total-value">$0.00</span>
+        </div>
+      </div>
+    </section>
+    <!-- Receipt card: Used to display system messages or printed receipt text -->
+    <section class="card">
+      <div class="receipt-head">
+        <h2>Receipt</h2>
+        <span class="small-note">Tip: do nothing for 15 seconds to see the inactivity reset message.</span>
+      </div>
+      <!-- pre tag: Used to maintain the "receipt format" id="receipt" is the location where the JS outputs the receipt text:
+      printReceipt() / calculateTotal() / resetCart() will update it -->
+      <pre id="receipt" class="receipt">Ready.</pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>Green Basket Grocery, Halifax, NS</span>
+      <span class="muted">Training demo</span>
+    </div>
+  </footer>
+  <!-- Include the JS file: Placing it at the end of the body ensures that HTML elements load completely before executing the JS (more stable) -->
+  <script src="script.js"></script>
+</body>
+</html>
