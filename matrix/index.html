@@ -1,0 +1,47 @@
+<!--
+Project: Matrix Rain Effect
+LMD: 2026-03-10
+Programmer: Joshua
+About project: This project shows a Matrix Rain animation using HTML, CSS, and JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matrix Rain</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- This canvas is the drawing area for the Matrix Rain effect -->
+  <canvas id="canvas"></canvas>
+  <main class="card">
+    <h1>Metric to Imperial Converter</h1>
+    <p class="subtitle">Client side "backend logic" practice</p>
+
+    <label for="valueInput">Value</label>
+    <input id="valueInput" type="text">
+
+    <label for="typeSelect">Conversion type</label>
+    <select id="typeSelect">
+      <option value="cToF">Celsius to Fahrenheit</option>
+      <option value="mToF">Meters to Feet</option>
+      <option value="kgToLbs">Kilograms to Pounds</option>
+      <option value="kmToMiles">Kilometers to Miles</option>
+      <option value="lToGal">Liters to Gallons</option>
+      <option value="cmToInch">Centimeters to Inches</option>
+      <option value="gToOz">Grams to Ounces</option>
+    </select>
+
+    <button id="convertBtn" onclick="convert()">Convert</button>
+
+    <div id="message" class="message" aria-live="polite"></div>
+    <div id="result" class="result" aria-live="polite"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

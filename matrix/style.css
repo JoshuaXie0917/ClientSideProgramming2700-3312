@@ -1,0 +1,81 @@
+/* Remove the default page margin */
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    font-family: Arial, sans-serif;
+}
+/* Make the canvas behave like a full-page drawing area */
+canvas {
+    display: block;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    top:  0;
+    left: 0;
+    position: 0;
+}
+.card {
+    position: relative;
+    z-index: 1;
+    max-width: 420px;
+    margin: 80px auto;
+    padding: 24px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Headings */
+h1 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Form elements */
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+/* Button style */
+button {
+    background: #111;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #333;
+}
+
+/* Output areas */
+.message {
+    color: red;
+    min-height: 24px;
+}
+
+.result {
+    font-weight: bold;
+    min-height: 24px;
+    color: #111;
+}
