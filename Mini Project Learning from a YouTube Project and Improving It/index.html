@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memo List App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Home page -->
+        <div id="homePage" class="app-box">
+            <h1>My Memo List</h1>
+            <p class="subtitle">Choose one category</p>
+            <div class="category-buttons">
+                <button class="category-btn" onclick="openCategory('study')">Study</button>
+                <button class="category-btn" onclick="openCategory('work')">Work</button>
+                <button class="category-btn" onclick="openCategory('life')">Life</button>
+            </div>
+        </div>
+        <!-- List page -->
+    <div id="listPage" class="app-box hidden">
+        <h2 id="categoryTitle">Category</h2>
+        <div class="row">
+            <input type="text" id="inputBox" placeholder="Write your memo here">
+            <button onclick="addMemo()">Add</button>        
+        </div>
+
+        <ul id="listContainer"></ul>
+
+        <div class="bottom-buttons">
+            <button class="back-btn" onclick="goHome()">Back to Homepage</button>
+        </div>
+    </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

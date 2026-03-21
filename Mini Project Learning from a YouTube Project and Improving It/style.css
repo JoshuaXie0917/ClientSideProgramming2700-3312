@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #153677, #4e085f);
+    min-height: 100vh;
+}
+
+.container{
+    width: 100%;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+.app-box{
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    margin: 80px auto;
+    padding: 40px 30px;
+    border-radius: 12px;
+}
+
+.hidden{
+    display: none;
+}
+
+h1,h2{
+    color:#222;
+    margin-bottom: 10px;
+}
+
+.subtitle{
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.category-buttons{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.category-btn,
+.row button,
+.back-btn{
+    border:none;
+    padding: 10px 15px;
+    outline: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.category-btn{
+    background: #ff5945;
+    color: white;
+}
+
+.category-btn:hover{
+    background: #e14a38;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #edeef0;
+    padding-left: 20px;
+    border-radius: 30px;
+    margin: 20px 0 25px;
+}
+
+.row input{
+    flex:1;
+    border:none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    padding: 14px 20px;
+}
+
+.row button{
+    background: #ff5945;
+}
+
+.row button:hover{
+    background: #e14a38;
+}
+
+ul li{
+    list-style: none;
+    background: #f7f7f7;
+    padding: 14px 50px 14px 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+ul li.checked .memo-text{
+    text-decoration: line-through;
+    color: #888;
+}
+
+.memo-text{
+    display: block;
+    font-size: 17px;
+    color: #222;
+}
+
+.memo-time{
+    display:block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 6px;
+}
+
+.action-buttons{
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.complete-btn,
+.delete-btn{
+    border:none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.complete-btn{
+    background: #4caf50;
+    color: white;
+}
+
+.delete-btn{
+    background: #f44336;
+    color: white;
+}
+
+.bottom-buttons{
+    margin-top: 20px;
+}
+
+.back-btn{
+    background: #333;
+    color: white;
+}
+
+.back-btn:hover{
+    background: #111;
+}
