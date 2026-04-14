@@ -1,0 +1,1 @@
+// This demo focuses on accessibility and visual clarity, so no extra JavaScript is required.
